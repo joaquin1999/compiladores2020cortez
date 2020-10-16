@@ -1427,6 +1427,23 @@ namespace at.jku.ssw.cc //Compilador //text_Box_Mio
             pr.Start();
         }
 
+        private void pestanaToken_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeView2_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void tokensToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabControl1.SelectTab(3);
+            //inicializa();
+            //compilar();
+        }
+
         private void acercaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             acerca_de f = new acerca_de();

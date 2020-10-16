@@ -99,6 +99,8 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.arbolTS = new System.Windows.Forms.TreeView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.pestanaToken = new System.Windows.Forms.TabPage();
+            this.tokenTreeView = new System.Windows.Forms.TreeView();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.pestania = new System.Windows.Forms.TabControl();
@@ -107,12 +109,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tokensToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.pag1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.pestanaToken.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -141,7 +145,7 @@
             this.richTextBox3.Location = new System.Drawing.Point(3, 3);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(522, 541);
+            this.richTextBox3.Size = new System.Drawing.Size(522, 562);
             this.richTextBox3.TabIndex = 15;
             this.richTextBox3.Text = "";
             this.richTextBox3.TextChanged += new System.EventHandler(this.richTextBox3_TextChanged);
@@ -474,7 +478,8 @@
             this.árbolDeDerivaciónToolStripMenuItem,
             this.tablaDeSímbolosToolStripMenuItem,
             this.instruccionesToolStripMenuItem,
-            this.gramaticaToolStripMenuItem});
+            this.gramaticaToolStripMenuItem,
+            this.tokensToolStripMenuItem});
             this.inspeccionarToolStripMenuItem.Name = "inspeccionarToolStripMenuItem";
             this.inspeccionarToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.inspeccionarToolStripMenuItem.Text = "Inspeccionar";
@@ -482,28 +487,28 @@
             // árbolDeDerivaciónToolStripMenuItem
             // 
             this.árbolDeDerivaciónToolStripMenuItem.Name = "árbolDeDerivaciónToolStripMenuItem";
-            this.árbolDeDerivaciónToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.árbolDeDerivaciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.árbolDeDerivaciónToolStripMenuItem.Text = "Árbol de Derivación";
             this.árbolDeDerivaciónToolStripMenuItem.Click += new System.EventHandler(this.árbolDeDerivaciónToolStripMenuItem_Click);
             // 
             // tablaDeSímbolosToolStripMenuItem
             // 
             this.tablaDeSímbolosToolStripMenuItem.Name = "tablaDeSímbolosToolStripMenuItem";
-            this.tablaDeSímbolosToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.tablaDeSímbolosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tablaDeSímbolosToolStripMenuItem.Text = "Tabla de Símbolos";
             this.tablaDeSímbolosToolStripMenuItem.Click += new System.EventHandler(this.tablaDeSímbolosToolStripMenuItem_Click);
             // 
             // instruccionesToolStripMenuItem
             // 
             this.instruccionesToolStripMenuItem.Name = "instruccionesToolStripMenuItem";
-            this.instruccionesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.instruccionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.instruccionesToolStripMenuItem.Text = "Instrucciones";
             this.instruccionesToolStripMenuItem.Click += new System.EventHandler(this.instruccionesToolStripMenuItem_Click);
             // 
             // gramaticaToolStripMenuItem
             // 
             this.gramaticaToolStripMenuItem.Name = "gramaticaToolStripMenuItem";
-            this.gramaticaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.gramaticaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.gramaticaToolStripMenuItem.Text = "Gramatica";
             this.gramaticaToolStripMenuItem.Click += new System.EventHandler(this.gramaticaToolStripMenuItem_Click);
             // 
@@ -657,6 +662,7 @@
             this.tabControl1.Controls.Add(this.pag1);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.pestanaToken);
             this.tabControl1.Location = new System.Drawing.Point(490, 31);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -710,7 +716,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(528, 547);
+            this.tabPage1.Size = new System.Drawing.Size(528, 568);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Tabla de Símbolos ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -720,7 +726,7 @@
             this.arbolTS.Dock = System.Windows.Forms.DockStyle.Fill;
             this.arbolTS.Location = new System.Drawing.Point(3, 3);
             this.arbolTS.Name = "arbolTS";
-            this.arbolTS.Size = new System.Drawing.Size(522, 541);
+            this.arbolTS.Size = new System.Drawing.Size(522, 562);
             this.arbolTS.TabIndex = 0;
             // 
             // tabPage2
@@ -729,10 +735,30 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(528, 547);
+            this.tabPage2.Size = new System.Drawing.Size(528, 568);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Instr CIL (RT 3)";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // pestanaToken
+            // 
+            this.pestanaToken.Controls.Add(this.tokenTreeView);
+            this.pestanaToken.Location = new System.Drawing.Point(4, 24);
+            this.pestanaToken.Name = "pestanaToken";
+            this.pestanaToken.Padding = new System.Windows.Forms.Padding(3);
+            this.pestanaToken.Size = new System.Drawing.Size(528, 568);
+            this.pestanaToken.TabIndex = 4;
+            this.pestanaToken.Text = "Tokens";
+            this.pestanaToken.UseVisualStyleBackColor = true;
+            this.pestanaToken.Click += new System.EventHandler(this.pestanaToken_Click);
+            // 
+            // tokenTreeView
+            // 
+            this.tokenTreeView.Location = new System.Drawing.Point(0, 0);
+            this.tokenTreeView.Name = "tokenTreeView";
+            this.tokenTreeView.Size = new System.Drawing.Size(504, 539);
+            this.tokenTreeView.TabIndex = 0;
+            this.tokenTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView2_AfterSelect);
             // 
             // tabControl2
             // 
@@ -820,6 +846,13 @@
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
             // 
+            // tokensToolStripMenuItem
+            // 
+            this.tokensToolStripMenuItem.Name = "tokensToolStripMenuItem";
+            this.tokensToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tokensToolStripMenuItem.Text = "Tokens";
+            this.tokensToolStripMenuItem.Click += new System.EventHandler(this.tokensToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -863,6 +896,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.pestanaToken.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -951,5 +985,8 @@
         private System.Windows.Forms.ToolStripMenuItem introducciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gramaticaToolStripMenuItem;
+        private System.Windows.Forms.TabPage pestanaToken;
+        public System.Windows.Forms.TreeView tokenTreeView;
+        private System.Windows.Forms.ToolStripMenuItem tokensToolStripMenuItem;
     }
 }
