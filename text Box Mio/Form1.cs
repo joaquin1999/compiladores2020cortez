@@ -1440,8 +1440,8 @@ namespace at.jku.ssw.cc //Compilador //text_Box_Mio
         private void tokensToolStripMenuItem_Click(object sender, EventArgs e)
         {
             tabControl1.SelectTab(3);
-            //inicializa();
-            //compilar();
+            inicializa();
+            compilar();
         }
 
         private void acercaToolStripMenuItem_Click(object sender, EventArgs e)
