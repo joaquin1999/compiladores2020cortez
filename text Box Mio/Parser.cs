@@ -349,6 +349,7 @@ namespace at.jku.ssw.cc
             //////----------------------------------------------------------------Grupo 2 20/10/2015------------------------------------------------------
             MessageBoxCon3Preg(program);
             Code.seleccLaProdEnLaGram(0);
+            MessageBoxCon3Preg(program);
             program.Nodes.Add("}");
             program.LastNode.EnsureVisible();
             //////----------------------------------------------------------------Grupo 2 20/10/2015------------------------------------------------------
@@ -366,7 +367,9 @@ namespace at.jku.ssw.cc
                 if (ZZ.readKey) Console.ReadKey();
             };
             Tab.CloseScope();
+            program.LastNode.EnsureVisible();
             Tab.mostrarTab();
+            program.LastNode.EnsureVisible();
             bool Depuracion = false;
             if (!Depuracion)
                 ParteFinal1();
@@ -374,7 +377,9 @@ namespace at.jku.ssw.cc
             {
                 Console.WriteLine("despues de prog.locals = Tab.topScope.locals; Tab.CloseScope()");
                 if (ZZ.readKey) Console.ReadKey();
+                program.LastNode.EnsureVisible();
                 Tab.mostrarTab();
+                program.LastNode.EnsureVisible();
             };
         }//Fin Program
 
@@ -780,6 +785,10 @@ namespace at.jku.ssw.cc
                 Parser.nroDeInstrCorriente++;
                 Parser.cil[Parser.nroDeInstrCorriente].accionInstr = Parser.AccionInstr.ret;
                 Code.cargaInstr("ret");
+                Code.seleccLaProdEnLaGram(8);
+                MessageBoxCon3Preg();
+                Code.seleccLaProdEnLaGram(0);
+                MessageBoxCon3Preg();
             }
         }//Fin MethodDecl
 
@@ -1695,6 +1704,7 @@ namespace at.jku.ssw.cc
                     System.Windows.Forms.MessageBox.Show("Aun no implementado 343323");
             }//Fin While
 
+
             if (existe_Addop_opc == false)
             {
                 MessageBoxCon3Preg(OpcAddopTerms);
@@ -2011,6 +2021,8 @@ namespace at.jku.ssw.cc
                                 MulOp.Nodes.Add("'*'");
                                 MulOp.ExpandAll();
                                 MessageBoxCon3Preg(MulOp);
+                                Code.seleccLaProdEnLaGram(27);
+                                MessageBoxCon3Preg(OpcMulopFactors);
                                 break;
                             }
                         case Token.SLASH:
@@ -2044,6 +2056,8 @@ namespace at.jku.ssw.cc
                     OpcMulopFactors.LastNode.EnsureVisible();
                     OpcMulopFactors.ExpandAll();
                     MessageBoxCon3Preg(OpcMulopFactors);
+                    Code.seleccLaProdEnLaGram(28);
+                    MessageBoxCon3Preg(OpcMulopFactors);
                     Parser.Factor(out itemSig, Factor_OpcMulop);
                     Code.Load(itemSig);
                     if (item.type != Tab.intType || itemSig.type != Tab.intType)
@@ -2053,6 +2067,7 @@ namespace at.jku.ssw.cc
                     Code.il.Emit(op);
                     nroDeInstrCorriente++;
                     Code.cargaInstr(opString);
+                    
                     if (op == Code.MUL)
                         cil[nroDeInstrCorriente].accionInstr = AccionInstr.mul;
                     else if (op == Code.DIV)
@@ -2082,7 +2097,7 @@ namespace at.jku.ssw.cc
                 Errors.Error("ErrorStrings.MUL_OP");
                 item = new Item(0);
             }
-            
+
         }//Fin Term
         //Fin Modificacíon - Grupo 1 - 28/10/15
 
