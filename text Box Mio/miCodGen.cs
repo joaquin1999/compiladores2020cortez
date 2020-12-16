@@ -553,18 +553,8 @@ namespace at.jku.ssw.cc
                                     //////----------------------------------------------------------------Grupo 2 22/10/2015------------------------------------------------------
                                     Parser.nroDeInstrCorriente++; cargaInstr("pop      ");
                                     Parser.cil[Parser.nroDeInstrCorriente].accionInstr = Parser.AccionInstr.pop;
-                                    seleccLaProdEnLaGram(27);
-                                    Parser.MessageBoxCon3Preg();
-                                    seleccLaProdEnLaGram(26);
-                                    Parser.MessageBoxCon3Preg();
-                                    seleccLaProdEnLaGram(25);
-                                    Parser.MessageBoxCon3Preg();
-                                    seleccLaProdEnLaGram(23);
-                                    Parser.MessageBoxCon3Preg();
-                                    seleccLaProdEnLaGram(22);
-                                    Parser.MessageBoxCon3Preg();
-                                    seleccLaProdEnLaGram(18);
-                                    Parser.MessageBoxCon3Preg();
+
+
 
                                     //////----------------------------------------------------------------Grupo 2 22/10/2015------------------------------------------------------
                                     break;
