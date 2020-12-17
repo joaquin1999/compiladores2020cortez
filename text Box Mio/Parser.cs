@@ -471,6 +471,9 @@ namespace at.jku.ssw.cc
             Check(Token.SEMICOLON);
             Code.Colorear("token");
             hijo2.Nodes.Add("';'");
+
+
+
         }//Fin ConstDecl
 
         //-------------------------------------------------Grupo 2 28/9/2015-----------------------------------------------------------------------         
@@ -670,7 +673,7 @@ namespace at.jku.ssw.cc
                     typeOrVoid.Expand();
                     MessageBoxCon3Preg();
                     Code.seleccLaProdEnLaGram(8);
-                    MessageBoxCon3Preg();
+                    MessageBoxCon3Preg(); //acaM
                     type = Tab.noType; //  para void
                 }
                 else
@@ -764,7 +767,7 @@ namespace at.jku.ssw.cc
                     }
                 }
                 //Termina Vardecl.
-                Code.seleccLaProdEnLaGram(2);
+                Code.seleccLaProdEnLaGram(2); //acaDudoso
                 MessageBoxCon3Preg();
 
                 if (cantVarLocales > 0)
@@ -776,6 +779,8 @@ namespace at.jku.ssw.cc
                     }
                     instrParaVarsLocs = instrParaVarsLocs + ")";
                     Code.cargaInstr(instrParaVarsLocs);
+                    Code.seleccLaProdEnLaGram(1);
+                    MessageBoxCon3Preg();
 
                 }
                 
@@ -784,10 +789,11 @@ namespace at.jku.ssw.cc
                 MessageBoxCon3Preg();
                 Code.seleccLaProdEnLaGram(1);
                 MessageBoxCon3Preg();
+                Code.Colorear("latoken");  //"{"
+                MessageBoxCon3Preg();
                 posDeclarsAux.Nodes.Add(".");
                 posDeclarsAux.ExpandAll();
                 MessageBoxCon3Preg();
-                Code.Colorear("latoken");  //"{"
                 Code.seleccLaProdEnLaGram(8);
                 MessageBoxCon3Preg();
                 //Comienza Block
@@ -2325,6 +2331,7 @@ namespace at.jku.ssw.cc
             padre.LastNode.EnsureVisible();
             MessageBoxCon3Preg(padre);
             Code.seleccLaProdEnLaGram(32);
+            MessageBoxCon3Preg(padre);
             //-------------------------------------------------Grupo 2 28/9/2015-----------------------------------------------------------
             Symbol sym = Tab.Find(token.str);
             if (ZZ.ParserStatem) Console.WriteLine("token.str:" + token.str);
