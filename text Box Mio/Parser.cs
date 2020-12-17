@@ -505,7 +505,7 @@ namespace at.jku.ssw.cc
             }
             else
             {
-                MessageBoxCon3Preg();
+                //MessageBoxCon3Preg(); //acaBox
                 identifieropc.Nodes.Add(".");
                 identifieropc.ExpandAll();
             }
@@ -517,7 +517,7 @@ namespace at.jku.ssw.cc
             // si es Tabla val y viene de "class P {", kind es "Global"
             Struct type;// = new Struct(Struct.Kinds.None); //int i;
             Code.seleccLaProdEnLaGram(6);
-            if (muestraProducciones) MessageBoxCon3Preg();
+            //if (muestraProducciones) MessageBoxCon3Preg(); //acaBox
             Code.cargaProgDeLaGram("VarDecl = Type  ident IdentifiersOpc ';'");
             //-------------------------------------------------Grupo 2 28/9/2015----------------------------------------------------------------------- 
             System.Windows.Forms.TreeNode hijo1 = new System.Windows.Forms.TreeNode("Type");//type
@@ -538,13 +538,14 @@ namespace at.jku.ssw.cc
             Code.seleccLaProdEnLaGram(12);
             //-------------------------------------------------Grupo 2 28/9/2015----------------------------------------------------------------------- 
             System.Windows.Forms.TreeNode lbrakopc = new System.Windows.Forms.TreeNode("LbrakeOpc");
-            MessageBoxCon3Preg();
+            //MessageBoxCon3Preg(); acaBox
             hijo1.Nodes.Add(lbrakopc);
             MessageBoxCon3Preg();
             Code.seleccLaProdEnLaGram(13);
             MessageBoxCon3Preg();
             Code.Colorear("latoken");
             //-------------------------------------------------Grupo 2 28/9/2015----------------------------------------------------------------------- 
+            //MessageBoxCon3Preg(); //nuevoBox
             lbrakopc.Nodes.Add(".");
             lbrakopc.ExpandAll();
             MessageBoxCon3Preg();
@@ -572,9 +573,12 @@ namespace at.jku.ssw.cc
             //o para x en int x;
             MessageBoxCon3Preg();
             Code.seleccLaProdEnLaGram(7);
-            Identifieropc(hijo2, type, kind);
+            MessageBoxCon3Preg(); //nuevoBox
             Code.Colorear("latoken");
+            Identifieropc(hijo2, type, kind);
+            
             Check(Token.SEMICOLON);
+            MessageBoxCon3Preg();
             Code.seleccLaProdEnLaGram(6);
             MessageBoxCon3Preg();
             Code.Colorear("token");
@@ -790,7 +794,7 @@ namespace at.jku.ssw.cc
                 Code.seleccLaProdEnLaGram(1);
                 MessageBoxCon3Preg();
                 Code.Colorear("latoken");  //"{"
-                MessageBoxCon3Preg();
+                //MessageBoxCon3Preg(); //acaBox
                 posDeclarsAux.Nodes.Add(".");
                 posDeclarsAux.ExpandAll();
                 MessageBoxCon3Preg();
@@ -1409,8 +1413,8 @@ namespace at.jku.ssw.cc
             Check(Token.LBRACE);
             block.Nodes.Add("'{'");
             block.ExpandAll();
-            MessageBoxCon3Preg(methodDecl);
-            Code.Colorear("token");
+            //MessageBoxCon3Preg(methodDecl); //acaBox
+            //Code.Colorear("token");
             /////// Agrega 'StatementsOpc' al arbol
             System.Windows.Forms.TreeNode statementsopc = new System.Windows.Forms.TreeNode("StatementsOpc");
             MessageBoxCon3Preg(block);
